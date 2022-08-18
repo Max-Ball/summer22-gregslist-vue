@@ -15,11 +15,11 @@
 
       <div class="col-4">
         <label class="form-label" for="year">Year</label>
-        <input class="form-control" type="number" id="year" name="year" min="1999" v-model="editable.year">
+        <input class="form-control" type="number" id="year" name="year" min="1918" v-model="editable.year">
       </div>
 
       <label class="form-label" for="price">Price</label>
-      <input class="form-control" type="number" min="1000" id="price" name="price" v-model="editable.price">
+      <input class="form-control" type="number" min="1" id="price" name="price" v-model="editable.price">
 
       <label class="form-label" for="img">Image</label>
       <input class="form-control" type="text" id="img" name="img" v-model="editable.img">

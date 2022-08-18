@@ -23,29 +23,30 @@ import { AppState } from '../AppState.js';
 import { carsService } from '../services/CarsService.js';
 import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
+import CarCard from '../components/Cards/CarCard.vue';
 
 export default {
   setup() {
     async function getCars() {
       try {
-        await carsService.getCars()
-      } catch (error) {
-        logger.error('[Getting Cars]', error)
-        Pop.error(error)
+        await carsService.getCars();
+      }
+      catch (error) {
+        logger.error("[Getting Cars]", error);
+        Pop.error(error);
       }
     }
-
     onMounted(() => {
-      getCars()
-    })
-
+      getCars();
+    });
     return {
       cars: computed(() => AppState.cars),
       setActiveCar() {
-        carsService.setActiveCar({})
+        carsService.setActiveCar({});
       }
-    }
-  }
+    };
+  },
+  components: { CarCard }
 }
 </script>
 

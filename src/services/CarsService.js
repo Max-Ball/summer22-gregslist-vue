@@ -5,9 +5,10 @@ import { server } from "./AxiosService.js";
 class CarsService {
   async editCar(carData) {
     let res = await server.put(`api/cars/${carData.id}`, carData)
-    let car = new Car(res.data)
-    let carIndex = AppState.cars.findIndex(c => c.id == carData.id)
-    AppState.cars.splice(carIndex, 1, car)
+    // let car = new Car(res.data)
+    // let carIndex = AppState.cars.findIndex(c => c.id == carData.id)
+    // AppState.cars.splice(carIndex, 1, car)
+    AppState.activeCar = res.data
   }
 
   async getCars() {
